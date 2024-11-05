@@ -8,7 +8,7 @@ export const AdminUsers = () => {
 
   const getAllUsersData = async () => {
     try {
-      const response = await fetch("http://localhost:8002/api/admin/users", {
+      const response = await fetch("https://admin-01.onrender.com/api/admin/users", {
         method: "GET",
         headers: {
           Authorization: authorizationToken,
@@ -27,7 +27,7 @@ export const AdminUsers = () => {
     try {
       console.log(id);
       const response = await fetch(
-        `http://localhost:8002/api/admin/users/delete/${id}`,
+        `https://admin-01.onrender.com/api/admin/users/delete/${id}`,
         {
           method: "DELETE",
           headers: {
