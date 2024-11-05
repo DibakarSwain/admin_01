@@ -18,7 +18,7 @@ export const AdminUpdate = () => {
   const getSingleUserData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8002/api/admin/users/${params.id}`,
+        `https://admin-01.onrender.com/api/admin/users/${params.id}`,
         {
           method: "GET",
           headers: {
@@ -58,7 +58,7 @@ export const AdminUpdate = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:8002/api/admin/users/update/${params.id}`,
+        `https://admin-01.onrender.com/api/admin/users/update/${params.id}`,
         {
           method: "PATCH",
           headers: {
