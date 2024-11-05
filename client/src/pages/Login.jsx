@@ -13,10 +13,9 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
-  const { storeTokenInLS, API } = useAuth();
+  const { storeTokenInLS} = useAuth();
   // let handle the input field value
 
-  const URL = `${API}/api/auth/login`;
   const handleInput = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -31,7 +30,7 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(URL, {
+      const response = await fetch("https://admin-01.onrender.com/api/form/contact/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
