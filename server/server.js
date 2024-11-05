@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT || 8002;
+const PORT = process.env.PORT || 8002;
 const path = require("path");
 
 const authRoute = require("./router/auth-router");
@@ -37,7 +37,7 @@ app.get("*", (_, res) => {
   res.sendFile(path.resolve(_dirname, "client", "dist", "index.html"));
 });
 connectDb().then(() => {
-  app.listen(port, () => {
-    console.log(`listen port at: ${port}`);
+  app.listen(PORT, () => {
+    console.log(`listen port at: ${PORT}`);
   });
 });
