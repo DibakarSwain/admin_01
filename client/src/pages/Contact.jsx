@@ -11,7 +11,7 @@ export const Contact = () => {
   const [contact, setContact] = useState(defaultContactFormData);
 
   const [userData, setUserData] = useState(true);
-const {user, API} = useAuth();
+const {user} = useAuth();
 if(userData && user) {
   setContact({
     username: user.username,
@@ -22,7 +22,7 @@ if(userData && user) {
   setUserData(false);
 }
 
-const URL = `${API}/api/form/contact`;
+
   // lets tackle our handleInput
   const handleInput = (e) => {
     const name = e.target.name;
@@ -40,7 +40,7 @@ const URL = `${API}/api/form/contact`;
 
     console.log(contact);
     try {
-      const response = await fetch(URL, {
+      const response = await fetch("https://admin-01.onrender.com/api/form/contact", {
         method: "POST",
         headers: {
         "Content-Type": "application/json"
