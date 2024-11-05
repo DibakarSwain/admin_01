@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [services, setServices] = useState([]);
   const authorizationToken = `Bearer ${token}`;
 
-  const API = import.meta.env.VITE_APP_URI_API;
+  const API = 'https://admin-01.onrender.com'
   const storeTokenInLS = (serverToken) => {
     setToken(serverToken);
     return localStorage.setItem("token", serverToken);
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
   const userAuthentication = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${API}/api/auth/user`, {
+      const response = await fetch(`https://admin-01.onrender.com/api/auth/user`, {
         method: "GET",
         headers: {
           Authorization: authorizationToken,
@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
   // to fetch the services data from the database
   const getServices = async () => {
     try {
-      const response = await fetch(`${API}/api/data/service`, {
+      const response = await fetch(`https://admin-01.onrender.com/api/data/service`, {
         method: "GET",
       });
       if (response.ok) {
