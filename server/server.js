@@ -16,7 +16,7 @@ const errorMiddleware = require("./middlewares/error-middleware");
 
 // handling cors policy issues
 const corsOptions = {
-  origin: "http://127.0.0.1:5173",
+  origin: "https://admin-01.onrender.com",
   methods: "GET, POST, PUT, PATCH, DELETE, HEAD",
   credentials: true,
 };
