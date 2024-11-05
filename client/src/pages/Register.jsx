@@ -14,10 +14,10 @@ export const Register = () => {
 
 
   const navigate = useNavigate();
- const { storeTokenInLS, API } = useAuth();
+ const { storeTokenInLS } = useAuth();
 
 
- const URL = `${API}/api/auth/register`;
+ const URL = ``;
   const handleInput = (e) => {
     console.log(e);
     let name = e.target.name;
@@ -36,7 +36,7 @@ export const Register = () => {
     console.log(user);
 
     try {
-      const response = await fetch(URL, {
+      const response = await fetch("https://admin-01.onrender.com/api/form/contact/api/auth/login/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
